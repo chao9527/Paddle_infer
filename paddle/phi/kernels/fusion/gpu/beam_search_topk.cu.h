@@ -268,7 +268,7 @@ __global__ void BeamSearchTopK(T* output,
     const bool stop_flag = stop_flags[i];
     const int end_id = end_ids[0];
 
-    if (length_penalty == 0.0) {
+    if (length_penalty == 0.0 || stop_flag) {
         // do nothing
     } else {
         // new_prob = (prob + cum_log_prob * previous_penalty) / current_penalty;
