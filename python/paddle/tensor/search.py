@@ -1126,7 +1126,6 @@ def beam_search_softmax(
     one_stage_topk=False,
 ):
     assert not (one_stage_topk and fuse_softmax), "one stage topk not support fuse softmax now."
-    assert not (early_stop and length_penalty != 0.0), "early_stop not support length_penalty now."
 
     if in_dygraph_mode():
         return _C_ops.beam_search_softmax(

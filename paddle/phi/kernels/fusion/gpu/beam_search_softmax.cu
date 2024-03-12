@@ -1019,6 +1019,8 @@ void invokeTopkSoftMax(const Context &dev_ctx,
     CASE_K(20);
     CASE_K(30);
     CASE_K(50);
+    CASE_K(100);
+    CASE_K(200);
     default:
       PADDLE_THROW(paddle::platform::errors::Unimplemented(
           "beam_size = %d is unsupport!", beam_size));
